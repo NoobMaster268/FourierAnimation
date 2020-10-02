@@ -15,7 +15,7 @@ function fourier(num){
         y += a *( sin(n/10 * time) );
 
     
-        stroke(255, 0, 320);
+        stroke(255, 204, 0);
         noFill();
         ellipse(prevx,prevy,a*2);
 
@@ -40,7 +40,7 @@ function fourier(num){
         if(num == 5)
         num = 0;
         if((wave.length-i) % 5 == num)
-         vertex(i/10,wave[i]);
+        vertex(i/10,wave[i]);
     }
     endShape();
     translate(-150,0);
@@ -48,7 +48,7 @@ function fourier(num){
 
 function setup()
 {
-    createCanvas(1200,200);
+    createCanvas(1200,1000);
 
 }
 
@@ -57,8 +57,14 @@ function draw()
     background(100);
     translate(150,100);
     
-    fourier(5);
-    translate(0,200);
     
-    time += 0.1;
+    for(let num=1; num<=5; num++){
+        
+        fourier(num);
+        translate(0,200);
+    }
+
+    time += 0.2;
+
+
 }
